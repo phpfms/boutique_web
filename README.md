@@ -13,7 +13,7 @@ A lightweight and fast starter template for building modern web applications usi
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/phpfms/boutique_web.git
 cd boutique_web
