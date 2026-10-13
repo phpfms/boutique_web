@@ -1,19 +1,30 @@
-# React + Vite
+# Vite + Bootstrap Starter Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight and fast starter template for building modern web applications using [Vite](https://vitejs.dev/) and [Bootstrap](https://getbootstrap.com/).
 
-Currently, two official plugins are available:
+## 📦 Features
+- ⚡ **Vite** for blazing-fast development and optimized builds
+- 🎨 **Bootstrap 5** for responsive UI components
+- 🛠 Easy customization via SCSS
+- 📱 Mobile-first design
+- 🔧 Ready for deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/phpfms/boutique_web.git
+cd boutique_web
+```
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+### Install dependencies
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Start development server
+```bash
+npm run dev
+```

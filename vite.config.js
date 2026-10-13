@@ -1,11 +1,14 @@
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
-import { defineConfig } from 'vite'
+const path = require('node:path')
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] })
-  ],
-})
+export default {
+    root: path.resolve(__dirname, 'src'),
+    resolve: {
+        alias: {
+            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+        }
+    },
+    server: {
+        port: 8080,
+        hot: true
+    }
+}
