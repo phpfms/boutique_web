@@ -1,133 +1,118 @@
 <!doctype html>
 <html lang="fr">
-<head>
-	<meta charset="utf-8" />
-	<!-- ne pas simuler d'ecran pc sur un mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>BROcante - Boutique en ligne</title>
-	<!--
-		Pas de <link rel="stylesheet" href="styles.scss"> vers styles.scss ici :
-		Vite recommande d'importer le SCSS depuis main.js
-		pour bénéficier du HMR (Hot Module Replacement) et du bundling (pour mise en production).
-		Vite injecte une balise <style> dans le <head> via JavaScript. En production, il génère
-		un fichier .css séparé et ajoute un <link> dans le HTML final.
-	-->
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<!-- ne pas simuler d'ecran pc sur un mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BROcante - Boutique en ligne</title>
+		<script type="module" src="js/main.js"></script>
+	</head>
 
-<body class="d-flex flex-column min-vh-100 bg-light">
-<!-- ==================== HEADER ==================== -->
-<!-- sticky-top : header toujours visible au scroll -->
-<header class="sticky-top">
-	<nav class="navbar navbar-expand-lg bg-primary-subtle border-bottom">
-		<div class="container">
+	<body class="d-flex flex-column min-vh-100">
+		<!-- ==================== HEADER ==================== -->
+		<!-- sticky-top : header toujours visible au scroll -->
+		<header class="sticky-top">
+			<nav class="navbar navbar-expand-lg bg-primary-subtle border-bottom">
+				<div class="container">
+					<!-- Logo + nom de la boutique -->
+					<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
+						<img src="./assets/img/logo_brand.png" alt="Logo BROcante" style="width: 150px" />
+					</a>
 
-			<!-- Logo + nom de la boutique -->
-			<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
-				<img src="./assets/img/logo.png" alt="Logo BROcante" height="32" />
-				<span>BROcante</span>
-			</a>
+					<!-- Boutons à droite : panier + connexion -->
+					<div class="d-flex align-items-center gap-2">
+						<!-- Bouton panier : ouvre un offcanvas (latéral) -->
+						<button
+							class="btn btn-outline-dark position-relative"
+							type="button"
+							data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasPanier"
+							aria-controls="offcanvasPanier">
+							🛒
+							<!-- Badge : nombre d'articles, mis à jour en JS -->
+							<span
+								id="panier-count"
+								class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+								>0</span
+							>
+						</button>
 
-			<!-- Boutons à droite : panier + connexion -->
-			<div class="d-flex align-items-center gap-2">
-				<!-- Bouton panier : ouvre un offcanvas (latéral) -->
-				<button
-					class="btn btn-outline-dark position-relative"
-					type="button"
-					data-bs-toggle="offcanvas"
-					data-bs-target="#offcanvasPanier"
-					aria-controls="offcanvasPanier"
-				>
-					🛒
-					<!-- Badge : nombre d'articles, mis à jour en JS -->
-					<span
-						id="panier-count"
-						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-					>0</span
-					>
-				</button>
+						<!-- Bouton connexion : ouvre une modal Bootstrap -->
+						<button
+							type="button"
+							class="btn btn-outline-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#modalConnexion">
+							Connexion
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
 
-				<!-- Bouton connexion : ouvre une modal Bootstrap -->
-				<button
-					type="button"
-					class="btn btn-outline-primary"
-					data-bs-toggle="modal"
-					data-bs-target="#modalConnexion"
-				>
-					Connexion
-				</button>
-			</div>
-		</div>
-	</nav>
-</header>
+		<!-- ==================== MAIN ==================== -->
+		<main class="flex-grow-1">
+			<!-- ---------- Titre de bienvenue ---------- -->
+			<section class="container text-center py-4">
+				<h1 class="h3 mb-0">Bienvenue sur BROcante</h1>
+			</section>
 
+			<!-- ---------- Barre de catégories ---------- -->
+			<!-- Boutons : data-categorie utilisé en JS pour filtrer les produits -->
+			<section class="container mb-4">
+				<div class="d-flex flex-wrap gap-2 justify-content-center">
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="all">Tout</button>
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="meuble">Meubles</button>
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="deco">Décoration</button>
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="livre">Livres</button>
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="vetement">Vêtements</button>
+					<button class="btn btn-outline-secondary btn-sm" data-categorie="jouet">Jouets</button>
+				</div>
+			</section>
 
-<!-- ==================== MAIN ==================== -->
-<main class="flex-grow-1">
-	<!-- ---------- Titre de bienvenue ---------- -->
-	<section class="container text-center py-4">
-		<h1 class="h3 mb-0">Bienvenue sur BROcante</h1>
-	</section>
-
-	<!-- ---------- Barre de catégories ---------- -->
-	<!-- Boutons : data-categorie utilisé en JS pour filtrer les produits -->
-	<section class="container mb-4">
-		<div class="d-flex flex-wrap gap-2 justify-content-center">
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="all">Tout</button>
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="meuble">Meubles</button>
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="deco">Décoration</button>
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="livre">Livres</button>
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="vetement">Vêtements</button>
-			<button class="btn btn-outline-secondary btn-sm" data-categorie="jouet">Jouets</button>
-		</div>
-	</section>
-
-	<!-- ---------- Bandeau : nb articles + bouton commande ---------- -->
-	<section class="container mb-3">
-		<div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+			<!-- ---------- Bandeau : nb articles + bouton commande ---------- -->
+			<section class="container mb-3">
+				<div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
 					<span class="text-muted">
 						Nb d'articles dans le panier :
 						<strong id="panier-count-texte">0</strong>
 					</span>
-			<a href="#" class="btn btn-success">Passer commande</a>
-		</div>
-	</section>
-
-	<!-- ---------- Grille de produits ---------- -->
-	<!-- row-cols-* : 2 colonnes mobile / 3 tablette / 4 desktop -->
-	<!-- Le contenu réel sera injecté par main.js à partir de l'API/template -->
-	<section class="container mb-5">
-		<div id="liste-produits" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-			<!-- Template cloné en JS pour chaque produit -->
-			<template id="template-produit">
-				<div class="col">
-					<article class="card h-100 position-relative">
-						<!-- Lien vers la future fiche description -->
-						<a href="#" class="text-decoration-none text-dark lien-produit">
-							<img
-								src="./assets/img/placeholder.png"
-								class="card-img-top object-fit-cover"
-								alt="Image du produit"
-								style="height: 150px"
-							/>
-							<div class="card-body pb-5">
-								<h3 class="card-title h6 mb-1 titre">Titre</h3>
-								<p class="card-text fw-bold mb-0 prix">Prix €</p>
-							</div>
-						</a>
-						<!-- Bouton ajout panier : event delegation dans main.js -->
-						<button
-							class="btn btn-sm btn-outline-success position-absolute bottom-0 end-0 m-2 btn-ajouter"
-							title="Ajouter au panier"
-						>
-							+
-						</button>
-					</article>
+					<a href="#" class="btn btn-success">Passer commande</a>
 				</div>
-			</template>
-		</div>
-	</section>
-</main>
+			</section>
 
-
-</body>
+			<!-- ---------- Grille de produits ---------- -->
+			<!-- row-cols-* : 2 colonnes mobile / 3 tablette / 4 desktop -->
+			<!-- Le contenu réel sera injecté par main.js à partir de l'API/template -->
+			<section class="container mb-5">
+				<div id="liste-produits" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+					<!-- Template cloné en JS pour chaque produit -->
+					<template id="template-produit">
+						<div class="col">
+							<article class="card h-100 position-relative">
+								<!-- Lien vers la future fiche description -->
+								<a href="#" class="text-decoration-none text-dark lien-produit">
+									<img
+										src="./assets/img/placeholder.png"
+										class="card-img-top object-fit-cover"
+										alt="Image du produit"
+										style="height: 150px" />
+									<div class="card-body pb-5">
+										<h3 class="card-title h6 mb-1 titre">Titre</h3>
+										<p class="card-text fw-bold mb-0 prix">Prix €</p>
+									</div>
+								</a>
+								<!-- Bouton ajout panier : event delegation dans main.js -->
+								<button
+									class="btn btn-sm btn-outline-success position-absolute bottom-0 end-0 m-2 btn-ajouter"
+									title="Ajouter au panier">
+									+
+								</button>
+							</article>
+						</div>
+					</template>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
