@@ -14,4 +14,52 @@
 	-->
 </head>
 
+<body class="d-flex flex-column min-vh-100 bg-light">
+<!-- ==================== HEADER ==================== -->
+<!-- sticky-top : header toujours visible au scroll -->
+<header class="sticky-top">
+	<nav class="navbar navbar-expand-lg bg-primary-subtle border-bottom">
+		<div class="container">
+
+			<!-- Logo + nom de la boutique -->
+			<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
+				<img src="./assets/img/logo.png" alt="Logo BROcante" height="32" />
+				<span>BROcante</span>
+			</a>
+
+			<!-- Boutons à droite : panier + connexion -->
+			<div class="d-flex align-items-center gap-2">
+				<!-- Bouton panier : ouvre un offcanvas (latéral) -->
+				<button
+					class="btn btn-outline-dark position-relative"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#offcanvasPanier"
+					aria-controls="offcanvasPanier"
+				>
+					🛒
+					<!-- Badge : nombre d'articles, mis à jour en JS -->
+					<span
+						id="panier-count"
+						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+					>0</span
+					>
+				</button>
+
+				<!-- Bouton connexion : ouvre une modal Bootstrap -->
+				<button
+					class="btn btn-outline-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#modalConnexion"
+				>
+					Connexion
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+
+</body>
 </html>
