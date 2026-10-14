@@ -1,2 +1,17 @@
 // Import all of Bootstrap's CSS
-@import '~bootstrap/scss/bootstrap';
+@use '~bootstrap/scss/bootstrap';
+
+html {
+	margin: 1% 1% auto;
+}
+
+header {
+	background-color: #a5d8ff;
+	padding: 6pt;
+	border-radius: 20px;
+}
+
+body {
+	font-family: 'Palatino Linotype', Calibri, sans-serif;
+	background-color: #e6fcf5;
+}
