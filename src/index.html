@@ -24,7 +24,6 @@
 			<!-- Logo + nom de la boutique -->
 			<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
 				<img src="./assets/img/logo.png" alt="Logo BROcante" height="32" />
-				<span>BROcante</span>
 			</a>
 
 			<!-- Boutons à droite : panier + connexion -->
@@ -103,19 +102,14 @@
 					<article class="card h-100 position-relative">
 						<!-- Lien vers la future fiche description -->
 						<a href="#" class="text-decoration-none text-dark lien-produit">
-							<img
-								src="./assets/img/placeholder.png"
-								class="card-img-top object-fit-cover"
-								alt="Image du produit"
-								style="height: 150px"
-							/>
-							<div class="card-body pb-5">
+								<div class="card-body pb-5">
 								<h3 class="card-title h6 mb-1 titre">Titre</h3>
 								<p class="card-text fw-bold mb-0 prix">Prix €</p>
 							</div>
 						</a>
 						<!-- Bouton ajout panier : event delegation dans main.js -->
 						<button
+							type="button"
 							class="btn btn-sm btn-outline-success position-absolute bottom-0 end-0 m-2 btn-ajouter"
 							title="Ajouter au panier"
 						>
@@ -129,5 +123,126 @@
 </main>
 
 
+<!-- ==================== FOOTER ==================== -->
+<!-- mt-auto + min-vh-100 sur body : footer collé en bas -->
+<footer class="bg-primary-subtle border-top py-4 mt-auto">
+	<div class="container">
+		<div class="row g-4">
+			<!-- Newsletter -->
+			<div class="col-6 col-md-3">
+				<h5 class="h6">Newsletter</h5>
+				<p class="small mb-2">Abonnez-vous</p>
+				<form class="d-flex gap-1" id="form-newsletter">
+					<input
+						type="email"
+						class="form-control form-control-sm"
+						placeholder="Votre email"
+						required
+					/>
+					<button class="btn btn-sm btn-primary" type="submit">OK</button>
+				</form>
+			</div>
+
+			<!-- Paiement -->
+			<div class="col-6 col-md-3">
+				<h5 class="h6">Payer avec</h5>
+				<div class="d-flex gap-2 flex-wrap">
+					<span class="badge bg-light text-dark">VISA</span>
+					<span class="badge bg-light text-dark">MasterCard</span>
+					<span class="badge bg-light text-dark">PayPal</span>
+				</div>
+			</div>
+
+			<!-- Infos légales -->
+			<div class="col-6 col-md-3">
+				<h5 class="h6">Infos légales</h5>
+				<ul class="list-unstyled small mb-0">
+					<li><a href="#" class="link-secondary text-decoration-none">CGV</a></li>
+					<li><a href="#" class="link-secondary text-decoration-none">Vie privée</a></li>
+					<li><a href="#" class="link-secondary text-decoration-none">CGU</a></li>
+					<li><a href="#" class="link-secondary text-decoration-none">Garantie légale</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact -->
+			<div class="col-6 col-md-3">
+				<h5 class="h6">Besoin d'aide ?</h5>
+				<ul class="list-unstyled small mb-0">
+					<li><a href="#" class="link-secondary text-decoration-none">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<hr class="my-3" />
+		<p class="text-center small mb-0">License by BROcante</p>
+	</div>
+</footer>
+
+
+<!-- ==================== MODAL CONNEXION ==================== -->
+<!-- Modal Bootstrap : gérée par data-bs-toggle + logique JS sur submit -->
+<div class="modal fade" id="modalConnexion" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Connexion</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+			</div>
+			<form id="form-connexion">
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="email" class="form-label">Courriel :</label>
+						<input type="email" class="form-control" id="email" required />
+					</div>
+					<div class="mb-3">
+						<label for="motdepasse" class="form-label">Mot de passe :</label>
+						<input type="password" class="form-control" id="motdepasse" required />
+					</div>
+					<a href="#" class="small">Mot de passe oublié ?</a>
+				</div>
+				<div class="modal-footer justify-content-between">
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+					<button type="submit" class="btn btn-success">Se connecter</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- ==================== OFFCANVAS PANIER ==================== -->
+<!-- Offcanvas : panneau latéral droit contenant le panier -->
+<div
+	class="offcanvas offcanvas-end"
+	tabindex="-1"
+	id="offcanvasPanier"
+	aria-labelledby="offcanvasPanierLabel"
+>
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasPanierLabel">Mon panier</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+	</div>
+	<div class="offcanvas-body d-flex flex-column">
+		<!-- Liste : générée dynamiquement par main.js -->
+		<div id="panier-liste" class="flex-grow-1"></div>
+
+		<!-- Total + bouton commander -->
+		<div class="border-top pt-3 mt-3">
+			<div class="d-flex justify-content-between mb-2">
+				<span class="fw-bold">Total :</span>
+				<span class="fw-bold" id="panier-total">0,00 €</span>
+			</div>
+			<a href="#" class="btn btn-success w-100">Passer commande</a>
+		</div>
+	</div>
+</div>
+
+<!--
+	Point d'entrée unique JS :
+	- importe Bootstrap (JS)
+	- importe styles.scss (compilé par Vite)
+	- gère panier, filtre catégories, modal connexion…
+	Le chemin est relatif à src/index.html.
+-->
+<script type="module" src="./js/main.js"></script>
 </body>
 </html>
