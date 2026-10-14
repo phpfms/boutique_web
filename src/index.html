@@ -5,13 +5,7 @@
 	<!-- ne pas simuler d'ecran pc sur un mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>BROcante - Boutique en ligne</title>
-	<!--
-		Pas de <link rel="stylesheet" href="styles.scss"> vers styles.scss ici :
-		Vite recommande d'importer le SCSS depuis main.js
-		pour bénéficier du HMR (Hot Module Replacement) et du bundling (pour mise en production).
-		Vite injecte une balise <style> dans le <head> via JavaScript. En production, il génère
-		un fichier .css séparé et ajoute un <link> dans le HTML final.
-	-->
+	<script type="module" src="js/main.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -23,7 +17,7 @@
 
 			<!-- Logo + nom de la boutique -->
 			<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
-				<img src="./assets/img/logo.png" alt="Logo BROcante" height="32" />
+				<img src="./assets/img/logo_brand.png" alt="Logo BROcante" height="32" />
 			</a>
 
 			<!-- Boutons à droite : panier + connexion -->
