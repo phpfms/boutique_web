@@ -8,34 +8,46 @@
 		<script type="module" src="js/main.js"></script>
 	</head>
 
-	<body class="d-flex flex-column min-vh-100 bg-light">
+	<body class="flex-column min-vh-100">
 		<!-- ==================== HEADER ==================== -->
 		<!-- sticky-top : header toujours visible au scroll -->
 		<header class="sticky-top">
-			<nav class="navbar navbar-expand-lg bg-primary-subtle border-bottom">
+			<nav aria-label="header" class="navbar navbar-expand-lg bg-primary-subtle border-bottom">
 				<div class="container">
 					<!-- Logo + nom de la boutique -->
 					<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="./index.html">
-						<img src="./assets/img/logo_brand.png" alt="Logo BROcante" style="width:30%" />
+						<img src="./assets/img/logo_brand.png" alt="Logo BROcante" style="width: 30%" />
 					</a>
 
 					<!-- Boutons à droite : panier + connexion -->
 					<div class="d-flex align-items-center gap-2">
-						<!-- Bouton panier : ouvre un offcanvas (latéral) -->
-						<button
-							class="btn btn-outline-dark position-relative"
-							type="button"
-							data-bs-toggle="offcanvas"
-							data-bs-target="#offcanvasPanier"
-							aria-controls="offcanvasPanier">
-							🛒
-							<!-- Badge : nombre d'articles, mis à jour en JS -->
-							<span
-								id="panier-count"
-								class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-								>0</span
-							>
-						</button>
+						<nav aria-label="basket" class="navbar">
+							<div class="container-fluid">
+								<!-- Bouton panier : ouvre un offcanvas (latéral) -->
+								<button
+									id="basket-button"
+									class="btn btn-outline-dark position-relative m-0 ms-auto"
+									type="button"
+									data-mdb-collapse-init
+									data-mdb-target="#navbarToggleExternalContent"
+									aria-controls="navbarToggleExternalContent"
+									aria-expanded="false"
+									aria-label="Toggle navigation">
+									🛒
+									<!-- Badge : nombre d'articles, mis à jour en JS -->
+									<span
+										id="panier-count"
+										class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+										>0</span
+									>
+								</button>
+							</div>
+						</nav>
+						<ul id="list-basket" class="position-absolute list-unstyled bg-body-secondary" style="top: 78%">
+							<li class="p-2">Article1</li>
+							<li class="p-2">Article 2</li>
+							<li class="m-1 p-1">Prix Total: <b>65 €</b></li>
+						</ul>
 
 						<!-- Bouton connexion : ouvre une modal Bootstrap -->
 						<button
