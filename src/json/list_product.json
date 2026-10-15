@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "titre": "Fauteuil ancien en chêne",
+    "prix": 45.0,
+    "categorie": "meuble",
+    "description": "Fauteuil restauré, tissu velours bordeaux. Fin XIXe siècle."
+  },
+  {
+    "id": 2,
+    "titre": "Table basse scandinave",
+    "prix": 32.5,
+    "categorie": "meuble",
+    "description": "Table basse en teck, pieds fuselés. Années 1960."
+  },
+  {
+    "id": 3,
+    "titre": "Lampe de chevet Art déco",
+    "prix": 18.0,
+    "categorie": "deco",
+    "description": "Lampe en laiton et verre opalin. Fonctionne parfaitement."
+  },
+  {
+    "id": 4,
+    "titre": "Miroir doré ancien",
+    "prix": 27.0,
+    "categorie": "deco",
+    "description": "Miroir avec cadre doré à la feuille. Quelques éclats d'usage."
+  },
+  {
+    "id": 5,
+    "titre": "Le Petit Prince - édition 1950",
+    "prix": 12.0,
+    "categorie": "livre",
+    "description": "Édition originale Gallimard. Couverture légèrement usée."
+  },
+  {
+    "id": 6,
+    "titre": "Encyclopédie Larousse (10 tomes)",
+    "prix": 55.0,
+    "categorie": "livre",
+    "description": "Collection complète, dos cuir. Parfait état intérieur."
+  },
+  {
+    "id": 7,
+    "titre": "Manteau en laine verte",
+    "prix": 22.5,
+    "categorie": "vetement",
+    "description": "Manteau femme taille 38, 100% laine. Très bon état."
+  },
+  {
+    "id": 8,
+    "titre": "Robe vintage à pois",
+    "prix": 15.0,
+    "categorie": "vetement",
+    "description": "Robe années 70, taille 36. Petit défaut à l'ourlet."
+  },
+  {
+    "id": 9,
+    "titre": "Petit train en bois",
+    "prix": 8.5,
+    "categorie": "jouet",
+    "description": "Train Brio avec 3 wagons. Complet, en bois massif."
+  },
+  {
+    "id": 10,
+    "titre": "Poupée ancienne porcelaine",
+    "prix": 25.0,
+    "categorie": "jouet",
+    "description": "Poupée début XXe, tête porcelaine, corps tissu. Yeux fixes."
+  },
+  {
+    "id": 11,
+    "titre": "Commode Louis-Philippe",
+    "prix": 120.0,
+    "categorie": "meuble",
+    "description": "Commode en noyer, 4 tiroirs. Serrure d'origine manquante."
+  },
+  {
+    "id": 12,
+    "titre": "Cadre photo doré",
+    "prix": 6.0,
+    "categorie": "deco",
+    "description": "Petit cadre ovale pour photo 10x15. Laiton patiné."
+  },
+  {
+    "id": 13,
+    "titre": "Bouquin Les Misérables",
+    "prix": 9.0,
+    "categorie": "livre",
+    "description": "Édition Hachette 1930, reliure toile. Dos légèrement taché."
+  },
+  {
+    "id": 14,
+    "titre": "Pull en cachemire beige",
+    "prix": 19.5,
+    "categorie": "vetement",
+    "description": "Pull homme taille M, 100% cachemire. Aucun défaut."
+  },
+  {
+    "id": 15,
+    "titre": "Voiture Dinky Toys",
+    "prix": 14.0,
+    "categorie": "jouet",
+    "description": "Petite voiture métal rouge, collection 1965. Pneus d'origine."
+  },
+  {
+    "id": 16,
+    "titre": "Buffet en pin massif",
+    "prix": 95.0,
+    "categorie": "meuble",
+    "description": "Buffet 2 portes + 3 tiroirs. Patine naturelle. À retirer sur place."
+  }
+]
