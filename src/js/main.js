@@ -1,13 +1,11 @@
 // Import our custom CSS
 import '../scss/styles.scss'
-import products from '../json/list_product.json';
-
-console.log(products.length); // 16
-console.log(products[0].titre); // "Fauteuil ancien en chêne"
+import Products from './Products'
 
 // Import all of Bootstrap's JS
 // import * as bootstrap from 'bootstrap'
 
+const main = document.getElementById('liste-produits')
 const buttonBasket = document.getElementById('basket-button')
 const listBasket = document.getElementById('list-basket')
 
@@ -20,4 +18,20 @@ buttonBasket.addEventListener('click', (event) => {
 
 document.addEventListener('click', () => {
 	listBasket.style.display = 'none'
+})
+
+const products = new Products()
+products.getProducts().forEach((product) => {
+	const element = document.createElement('p')
+	element.textContent =
+		'Titre: ' +
+		product.titre +
+		', Prix: ' +
+		product.prix +
+		' €, ' +
+		'Catégorie: ' +
+		product.categorie +
+		', Description: ' +
+		product.description
+	main.appendChild(element)
 })
